@@ -1,0 +1,11 @@
+Model Information:
+* title:	3 Monitor SetUp
+* source:	https://sketchfab.com/3d-models/3-monitor-setup-4643d59bf4dc4ffb8e000167d257d589
+* author:	ilegitzx (https://sketchfab.com/ilegitzx)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "3 Monitor SetUp" (https://sketchfab.com/3d-models/3-monitor-setup-4643d59bf4dc4ffb8e000167d257d589) by ilegitzx (https://sketchfab.com/ilegitzx) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
