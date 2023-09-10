@@ -7,11 +7,11 @@ const App = () => {
   return (
     <BrowserRouter getUserConfirmation={() => {
       /* Empty callback to block the default browser prompt */
-    }}>
+    }} >
 
-      <Routes>
+      <Routes >
         <Route path="/" element={<Home />} />
-        <Route path="/terminal" element={<div className="container"><Term/></div>} />
+        <Route path="/terminal" element={<div className="container flex flex-col items-center justify-center w-screen h-screen"><Term/></div>} />
       </Routes>
     </BrowserRouter>
 

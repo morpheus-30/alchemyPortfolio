@@ -14,6 +14,19 @@
   color-scheme: dark;
 }
 
+body {
+  margin-top: 10px;
+  overflow: hidden;
+  background-image: url(../public/1228057.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
 .neon {
   color: #fff;
   text-shadow:
@@ -67,7 +80,6 @@
       #f12711,
       #f5af19);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -82,7 +94,6 @@
       #11998e,
       #38ef7d);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -98,7 +109,6 @@
       #2f80ed,
       #56ccf2);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -215,19 +225,27 @@
 }
 
 .container {
-  width: 98vw;
-  height: 95vh;
-  padding: 10px 30px 10px 10px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  display: flex;
+  align-self: center;
+  width: 100vw;
+  height: 100vh;
+  place-items: center;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px 30px 10px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(100px);
+  border-radius: 100px;
+  border: 1px solid rgba(33, 11, 11, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  border: 1px solid #bd93f9;
+  border: 1px solid #00ac06;
+  border-radius: 10px;
+  overflow: hidden;
 }
+
 .head {
-  color:#ff5555;
+  color: #ffffff;
   font-weight: normal;
 }
 
@@ -235,8 +253,10 @@
   width: 400px;
   height: 300px;
 }
+
 .App {
   align-self: center;
+  justify-content: center;
   height: 95vh;
   padding: 5px;
   width: 98vw;
@@ -244,11 +264,12 @@
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
-  border:1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
+
 pre {
-  color: #8be9fd;
+  color: #0e7600;
   padding-left: 20px;
   font-size: 14px;
   font-weight: bold;

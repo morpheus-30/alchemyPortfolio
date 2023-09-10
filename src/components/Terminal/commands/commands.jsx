@@ -1,6 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import getcat from "../utils/cat"
-import getnp from "../utils/spotify"
+// import getnp from "../utils/spotify"
+import getRecentTracks from "../utils/spotify/spotify"
 export default {
     commands: {
         echo: {
@@ -35,7 +36,7 @@ export default {
             description: 'Opens my Art Page.',
             usage: 'artpage',
             fn: () => {
-                window.open('https://www.instagram.com/___chasin___/', '_blank')
+                window.open('https://www.instagram.com/naksh.draws.sometimes/', '_blank')
                 return "opening art page..."
             }
         },
@@ -115,8 +116,7 @@ export default {
             fn: () => {
                 return `
                     Editor: Visual Studio Code\n
-                    Theme : Catpuccin\n
-                    Font  : Consolas
+                    Theme : Discord Theme\n
                 `
             }
         },
@@ -124,23 +124,11 @@ export default {
             description: "Opens this website's github repository.",
             usage: 'repo',
             fn: () => {
-                window.open("https://github.com/asrvd/AshTerm", '_blank')
+                window.open("https://github.com/morpheus-30/alchemyPortfolio.git", '_blank')
                 return "opening repository..."
             }
-        },
-        spotify: {
-            description: 'Get info about my recently played song.',
-            usage: 'spotify',
-            fn: async () => {
-                const item = await getnp()
-                return `
-                    Now Playing/Recently Played\n
-                    ---\n
-                    Song: ${item.song}\n
-                    Artist: ${item.artist}\n---\n
-                `
-            }
         }
+        
     },
     overwrites:{
         help: {
