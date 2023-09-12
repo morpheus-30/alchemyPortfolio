@@ -5,39 +5,52 @@ import Hero from "./Hero";
 import MonitorCanvas from "./Monitor";
 import StarsCanvas from "./stars";
 import { useNavigate } from "react-router-dom";
+import { scroller } from "react-scroll";
+import ScrollAnimation from "react-animate-on-scroll";
+// import { useScrollDirection } from "./scrollDirection";
+// import useDetectScroll from "@smakss/react-scroll-direction";
 
 const Home = () => {
     const [introText, setIntroText] = useState("Hi I am Naksh");
-    const scrollThreshold = 100; // Adjust this threshold as needed
-    const scrollRef = React.useRef(null);
+    // const scrollThreshold = 0; // Adjust this threshold as needed
+    // const scrollRef = React.useRef(null);
+    let scrollThreshold = 0;
     let navigate = useNavigate();
-
     useEffect(() => {
-        const handleScroll = () => {
-            console.log(window.scrollY);
-            // console.log("scrolling");
-            setIntroText("I like to Code");
+        // const handleScroll = () => {
+        //     // console.log(useScrollDirection());
+        //     // const scrollDirection = getDirectionEmoji(scrollDirection);
+        //     // setIntroText(scrollDirection);
+        //     // console.log(window.scrollY);
+        //     // console.log(window.scrollTo(0, 0));
+        //     // console.log(window.scroll(0, 0));
 
-        };
 
-        window.addEventListener('scroll', handleScroll, true);
+        // };
+
+        // window.addEventListener('scroll', handleScroll, true);
 
         // Clean up the event listener when the component unmounts
-        return () => {
-            window.removeEventListener("scroll", handleScroll, true);
-        };
+        // return () => {
+        //     window.removeEventListener("scroll", handleScroll, true);
+        // };
     }, [introText]);
     const onClick = () => {
-        
-        navigate("/terminal");
+        navigate("/loader");
     }
-
-
-
-    function handleScroll() {
+    function onClickSpaceboi() {
         console.log("scrolling");
+        // scrollThreshold += window.scrollY;
+        // console.log(scrollThreshold);
+        // console.log(window.scroll(0, 0));
+        if(introText==="Hi I am Naksh"){
+            setIntroText("I like to code");
+        }else{
+            setIntroText("Hi I am Naksh");
+        }
     }
     return (
+
         <div className="snap-y snap-mandatory scroll-smooth text-sm h-screen w-screen bg-black overflow-x-hidden justify-center " >
             <PlayButton />
             <div className="items-center snap-center" >
@@ -45,12 +58,12 @@ const Home = () => {
                 < div className="flex absolute ">
                     <StarsCanvas />
                 </div>
-                <div onScroll={handleScroll}><Hero /></div>
+                <div onClick={onClickSpaceboi} ><Hero /></div>
 
             </div>
 
             {/* <div className="h-96"></div> */}
-            <div className="snap-center"><MonitorCanvas onClick={onClick} /></div>
+            <div className="snap-center" ><MonitorCanvas onClick={onClick} /></div>
         </div>
     )
 }

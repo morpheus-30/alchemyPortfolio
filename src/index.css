@@ -17,7 +17,9 @@
 body {
   margin-top: 10px;
   overflow: hidden;
-  background-image: url(../public/1228057.png);
+  /* background-image: url(../public/1228057.png); */
+  background-color: #000000;
+  opacity: 1;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;

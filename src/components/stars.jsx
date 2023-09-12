@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { Suspense, useRef } from "react";
 import { Canvas, } from "@react-three/fiber";
 import { OrbitControls, Preload, Stars, useGLTF } from "@react-three/drei";
-import CanvasLoader from '../Loader'
+// import CanvasLoader from '../Loader'
 
 
 

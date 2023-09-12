@@ -12,11 +12,7 @@ function Monitor({ src, position }) {
         <primitive object={scene} position={position} scale={2} />
     </mesh>
 }
-function Hologram({ src, position }) {
-    const model = useGLTF("")
-    const scene = React.useMemo(() => model.scene.clone(true), [model]);
-    return <primitive object={scene} position={position} scale={1} />
-}
+
 
 function ThreeMonitors() {
     return (

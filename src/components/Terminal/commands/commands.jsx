@@ -1,7 +1,13 @@
-/* eslint-disable import/no-anonymous-default-export */
+
+// import { useNavigate } from "react-router-dom";
 import getcat from "../utils/cat"
-// import getnp from "../utils/spotify"
 import getRecentTracks from "../utils/spotify/spotify"
+// import { useNavigate } from "react-router-dom";
+
+
+let playing = false;
+var audio = new Audio('music/keep_dreaming.mp3');
+
 export default {
     commands: {
         echo: {
@@ -26,7 +32,7 @@ export default {
         },
         github: {
             description: 'Opens my GitHub Profile.',
-            usage: 'twitter',
+            usage: 'github',
             fn: () => {
                 window.open('https://github.com/morpheus-30/', '_blank')
                 return "opening github account..."
@@ -42,7 +48,7 @@ export default {
         },
         discord: {
             description: 'Opens my Discord Account.',
-            usage: 'twitter',
+            usage: 'discord',
             fn: () => {
                 window.open('https://discordapp.com/users/909448163994247198', '_blank')
                 return "opening discord account..."
@@ -70,6 +76,33 @@ export default {
                     dart             - 40%
                     C/C++            - 90%
                     Java             - 10% - [learning]\n---\n
+                `
+            }
+        },
+        play: {
+            description: 'play the song',
+            usage: 'play',
+            fn: () => {
+                if (playing == false) {
+                    playing = true;
+                    audio.play(LoopRepeat);
+                }
+
+                return `
+                 playing naksh's favourite song.\n---\n   
+                `
+            }
+        },
+        pause: {
+            description: 'pause the song',
+            usage: 'pause',
+            fn: () => {
+             if(playing == true){
+                    playing = false;
+                    audio.pause();
+                }
+                return `
+                    pausing naksh's favourite song.\n---\n
                 `
             }
         },
@@ -128,9 +161,9 @@ export default {
                 return "opening repository..."
             }
         }
-        
+
     },
-    overwrites:{
+    overwrites: {
         help: {
             description: 'List all available commands',
             usage: 'help',
