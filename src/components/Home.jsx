@@ -6,6 +6,8 @@ import MonitorCanvas from "./Monitor";
 import StarsCanvas from "./stars";
 import { useNavigate } from "react-router-dom";
 import { scroller } from "react-scroll";
+import useSound from "use-sound";
+import neffex from "/music/keep_dreaming.mp3"
 import ScrollAnimation from "react-animate-on-scroll";
 // import { useScrollDirection } from "./scrollDirection";
 // import useDetectScroll from "@smakss/react-scroll-direction";
@@ -16,6 +18,8 @@ const Home = () => {
     // const scrollRef = React.useRef(null);
     let scrollThreshold = 0;
     let navigate = useNavigate();
+    const [isPlaying, setIsPlaying] = React.useState(false);
+    const [neffex2, { stop }] = useSound(neffex, { volume: 0.5 });
     useEffect(() => {
         // const handleScroll = () => {
         //     // console.log(useScrollDirection());
@@ -36,6 +40,13 @@ const Home = () => {
         // };
     }, [introText]);
     const onClick = () => {
+        // if(isPlaying==true){
+        //     audio.pause();
+        // }
+        if(isPlaying){
+            stop();
+            setIsPlaying(false);
+        }
         navigate("/loader");
     }
     function onClickSpaceboi() {
@@ -49,10 +60,20 @@ const Home = () => {
             setIntroText("Hi I am Naksh");
         }
     }
+
+    function onClickPlay()  {
+        if (isPlaying) {
+            setIsPlaying(false);
+            stop();
+        } else {
+            setIsPlaying(true);
+            neffex2();
+        }
+    }
     return (
 
         <div className="snap-y snap-mandatory scroll-smooth text-sm h-screen w-screen bg-black overflow-x-hidden justify-center " >
-            <PlayButton />
+            <PlayButton onClick={onClickPlay}/>
             <div className="items-center snap-center" >
                 <Intro text={introText} />
                 < div className="flex absolute ">

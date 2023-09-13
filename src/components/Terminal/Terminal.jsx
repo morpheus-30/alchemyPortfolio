@@ -15,6 +15,8 @@ export default function Term() {
     const [dir, setdir] = React.useState({
         'nakshatr-ayo': []
     })
+    let playing = false;
+    var audio = new Audio('music/keep_dreaming.mp3');
     const navigate = useNavigate();
     // console.log("Welcome to ashterm")
     const welcomeMessage = [
@@ -35,6 +37,33 @@ export default function Term() {
                     usage: 'clear',
                     fn: () => {
                         terminal.current.clearStdout()
+                    }
+                },
+                play: {
+                    description: 'play the song',
+                    usage: 'play',
+                    fn: () => {
+                        if (playing == false) {
+                            playing = true;
+                            audio.play();
+                        }
+        
+                        return `
+                         playing naksh's favourite song.\n---\n   
+                        `
+                    }
+                },
+                pause: {
+                    description: 'pause the song',
+                    usage: 'pause',
+                    fn: () => {
+                     if(playing == true){
+                            playing = false;
+                            audio.pause();
+                        }
+                        return `
+                            pausing naksh's favourite song.\n---\n
+                        `
                     }
                 },
                 cat: {
@@ -71,13 +100,17 @@ export default function Term() {
                                 return 'cannot find directory'
                             }
                         }
-
+``
                     }
                 },
                 exit:{
                     description: 'Exit the terminal',
                     usage: 'exit',
                     fn: () => {
+                        if(playing == true){
+                            playing = false;
+                            audio.pause();
+                        }
                         navigate('/',{replace:true});
                     }
                 },

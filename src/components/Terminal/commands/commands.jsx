@@ -5,8 +5,7 @@ import getRecentTracks from "../utils/spotify/spotify"
 // import { useNavigate } from "react-router-dom";
 
 
-let playing = false;
-var audio = new Audio('music/keep_dreaming.mp3');
+
 
 export default {
     commands: {
@@ -76,33 +75,6 @@ export default {
                     dart             - 40%
                     C/C++            - 90%
                     Java             - 10% - [learning]\n---\n
-                `
-            }
-        },
-        play: {
-            description: 'play the song',
-            usage: 'play',
-            fn: () => {
-                if (playing == false) {
-                    playing = true;
-                    audio.play(LoopRepeat);
-                }
-
-                return `
-                 playing naksh's favourite song.\n---\n   
-                `
-            }
-        },
-        pause: {
-            description: 'pause the song',
-            usage: 'pause',
-            fn: () => {
-             if(playing == true){
-                    playing = false;
-                    audio.pause();
-                }
-                return `
-                    pausing naksh's favourite song.\n---\n
                 `
             }
         },
