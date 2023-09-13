@@ -10,7 +10,7 @@ const App = () => {
   return (
     <BrowserRouter getUserConfirmation={() => {
       /* Empty callback to block the default browser prompt */
-    }} >
+    }} basename="/alchemy/">
 
       <Routes >
         <Route path="/" element={<Home />} />
